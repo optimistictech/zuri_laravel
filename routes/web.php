@@ -19,6 +19,11 @@ Route::get('/', function () {
 });
 
 Route::get(
-    '/user',
-    [UserController::class, 'index']
+    '/user/all',
+    [UserController::class, 'Get']
+);
+
+Route::get(
+    '/user/all',
+    [UserController::class, 'Get']
 );

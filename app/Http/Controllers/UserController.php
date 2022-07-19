@@ -9,12 +9,7 @@ class UserController extends Controller
 {
 
    
-    public function index()
-    {
-        $users = User::all();
-        return view ('user.users')->with('users', $users);
-    }
- 
+  
 
 
     public function Create(){
@@ -26,9 +21,9 @@ class UserController extends Controller
 
 
     public function Get(){
-
+        
         $users = User::all();
-        return view ('user.users')->with('students', $users);
+        return view ('user.users')->with('users', $users);
     
     }
 
