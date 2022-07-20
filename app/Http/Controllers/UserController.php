@@ -14,9 +14,14 @@ class UserController extends Controller
 
     public function Create(){
 
+    
+        $user = User::create(([
+            'name' =>'Olaoro', 
+            'email' => 'olaoro@gmail.com',
+            'phone' => '08131157998'
+        ]));
         
-
-        return view('user.users');
+        return redirect('user/all')->with('flash_message', 'User Addedd!');  
     }
 
 

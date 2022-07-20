@@ -23,7 +23,8 @@ Route::get(
     [UserController::class, 'Get']
 );
 
-Route::get(
-    '/user/all',
-    [UserController::class, 'Get']
+/* Route::get(
+    '/user/create',
+    [UserController::class, 'Create']
 );
+ */
