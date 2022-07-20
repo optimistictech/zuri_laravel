@@ -19,6 +19,7 @@
                                         <th>Name</th>
                                         <th>Address</th>
                                         <th>Mobile</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -28,11 +29,21 @@
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->email }}</td>
                                         <td>{{ $item->phone }}</td>
+                                        <td>
+                                        <a href="{{ url('/user/' . $item->id . '/edit') }}" title="Edit User"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+
+                                        </td>
                                        
                                     </tr>
                                 @endforeach
                                 </tbody>
                             </table>
+
+                            @if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+@endif
                         </div>
                     </div>
                 </div>

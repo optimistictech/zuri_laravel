@@ -22,6 +22,15 @@ Route::get(
     '/user/all',
     [UserController::class, 'Get']
 );
+Route::get(
+    '/user/{id}/edit',
+    [UserController::class, 'Edit']
+);
+
+Route::PATCH(
+    '/user/{id}',
+    [UserController::class, 'Update']
+);
 
 /* Route::get(
     '/user/create',

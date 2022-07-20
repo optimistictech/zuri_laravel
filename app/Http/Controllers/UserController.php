@@ -18,7 +18,7 @@ class UserController extends Controller
         $user = User::create(([
             'name' =>'Olaoro', 
             'email' => 'olaoro@gmail.com',
-            'phone' => '08131157998'
+            'phone' => 'ß'
         ]));
         
         return redirect('user/all')->with('flash_message', 'User Addedd!');  
@@ -30,6 +30,24 @@ class UserController extends Controller
         $users = User::all();
         return view ('user.users')->with('users', $users);
     
+    }
+
+    public function Edit($id){
+
+        $user=User::find($id);
+        return view('user.edit')->with('user', $user);
+
+    }
+
+    public function Update(Request $request, $id){
+
+
+        $user = user::find($id);
+        $input = $request->all();
+        $user->update($input);
+
+        return redirect('user/all')->with('status', 'User Updated!'); 
+
     }
 
 }
