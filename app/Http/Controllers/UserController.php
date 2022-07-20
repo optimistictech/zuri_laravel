@@ -16,9 +16,9 @@ class UserController extends Controller
 
     
         $user = User::create(([
-            'name' =>'Olamide', 
-            'email' => 'olamide@gmail.com',
-            'phone' => '09098787655'
+            'name' =>'Kolawole', 
+            'email' => 'adeola@gmail.com',
+            'phone' => '08098776788'
         ]));
         
         return redirect('user/all')->with('flash_message', 'User Addedd!');  
