@@ -18,7 +18,7 @@ class UserController extends Controller
         $user = User::create(([
             'name' =>'Olaoro', 
             'email' => 'olaoro@gmail.com',
-            'phone' => 'ß'
+            'phone' => '08131157998'
         ]));
         
         return redirect('user/all')->with('flash_message', 'User Addedd!');  
@@ -48,6 +48,13 @@ class UserController extends Controller
 
         return redirect('user/all')->with('status', 'User Updated!'); 
 
+    }
+
+
+    public function Destroy($id)
+    {
+        User::destroy($id);
+        return redirect('user/all')->with('status', 'User deleted!');  
     }
 
 }

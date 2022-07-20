@@ -27,13 +27,16 @@ Route::get(
     [UserController::class, 'Edit']
 );
 
-Route::PATCH(
+Route::patch(
     '/user/{id}',
     [UserController::class, 'Update']
 );
+Route::delete(
+    '/user/delete/{id}',
+    [UserController::class, 'Destroy']
+);
 
-/* Route::get(
+Route::get(
     '/user/create',
     [UserController::class, 'Create']
 );
- */
